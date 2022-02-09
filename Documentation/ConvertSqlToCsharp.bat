@@ -1,0 +1,3 @@
+.\SqlToCsharpConverter_v1.1.0\SqlToCsharpConsoleAppConverter.exe -i DFMS_create.sql -n DFMS.Database -p Db -b DbTableCommonModel -a DFMS.Database.Base -o ..\DFMS.Backend\DFMS.Database\Models\
+if not exist ..\DFMS.Backend\DFMS.Database\Models\Base mkdir ..\DFMS.Backend\DFMS.Database\Models\Base
+move ..\DFMS.Backend\DFMS.Database\Models\DbTableCommonModel.cs ..\DFMS.Backend\DFMS.Database\Models\Base\DbTableCommonModel.cs
