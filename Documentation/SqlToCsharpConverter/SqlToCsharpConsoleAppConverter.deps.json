@@ -6,11 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "SqlToCsharpConsoleAppConverter/1.1.0": {
+      "SqlToCsharpConsoleAppConverter/1.2.0": {
         "dependencies": {
           "ConsoleAppParametersHandler": "1.1.0",
           "NLog": "4.7.13",
-          "SqlToCsharpTranscriptor": "1.1.0"
+          "SqlToCsharpTranscriptor": "1.1.2"
         },
         "runtime": {
           "SqlToCsharpConsoleAppConverter.dll": {}
@@ -29,7 +29,7 @@
           "ConsoleAppParametersHandler.dll": {}
         }
       },
-      "SqlToCsharpTranscriptor/1.1.0": {
+      "SqlToCsharpTranscriptor/1.1.2": {
         "runtime": {
           "SqlToCsharpTranscriptor.dll": {}
         }
@@ -37,7 +37,7 @@
     }
   },
   "libraries": {
-    "SqlToCsharpConsoleAppConverter/1.1.0": {
+    "SqlToCsharpConsoleAppConverter/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -54,7 +54,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SqlToCsharpTranscriptor/1.1.0": {
+    "SqlToCsharpTranscriptor/1.1.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
