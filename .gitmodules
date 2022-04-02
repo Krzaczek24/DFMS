@@ -1,3 +1,6 @@
 [submodule "Backend"]
 path = DFMS.Backend
 url = https://github.com/Krzaczek24/DFMS.Backend.git
+[submodule "Frontend.ReactJsMobx"]
+path = DFMS.Frontend.ReactJsMobx
+url = https://github.com/Krzaczek24/DFMS.Frontend.ReactJsMobx.git
