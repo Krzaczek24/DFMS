@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "d8de908b-47cc-4b4e-a41b-6f56b3eb515d",
+		"name": "DFMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FormTemplate",
+			"item": [
+				{
+					"name": "Fields",
+					"item": [
+						{
+							"name": "Validation",
+							"item": [
+								{
+									"name": "GetValidationDefinitions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADDRESS}}/form-template/validation-rules",
+											"host": [
+												"{{ADDRESS}}"
+											],
+											"path": [
+												"form-template",
+												"validation-rules"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CreateValidationDefinition",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Pole wymagane\",\r\n    \"type\": \"REQUIRED\",\r\n    \"message\": \"Pole obowiązkowe\",\r\n    \"editableMessage\": true,\r\n    \"editableValue\": false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADDRESS}}/form-template/validation-rules",
+											"host": [
+												"{{ADDRESS}}"
+											],
+											"path": [
+												"form-template",
+												"validation-rules"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Visibility",
+							"item": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FormTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ADDRESS}}/form-template",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"form-template"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": []
+		},
+		{
+			"name": "Authorize",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"Krzaczek\",\r\n    \"passwordHash\": \"x\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/authorization",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"authorization"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3J6YWN6ZWsiLCJyb2xlIjoiQURNSU4iLCJJZCI6IjEiLCJMb2dpbiI6IktyemFjemVrIiwiUm9sZSI6IkFETUlOIiwiRmlyc3ROYW1lIjoiIiwiTGFzdE5hbWUiOiIiLCJMYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0wMyAwMTowMjo1NyIsIm5iZiI6MTY2NzQzMzc3NywiZXhwIjoxNjY3NDM3Mzc3LCJpYXQiOjE2Njc0MzM3Nzd9.LuM2bIFwEIKbcLPaXjgZFs6PJEyzPeYf2cM6MpzX1I0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

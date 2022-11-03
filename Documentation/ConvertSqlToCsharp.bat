@@ -1,3 +1,3 @@
-.\SqlToCsharpConverter\SqlToCsharpConsoleAppConverter.exe -i DFMS_create.sql -o ..\DFMS.Backend\DFMS.Database\Models\ -n DFMS.Database.Models -p Db -b DbTableCommonModel -a DFMS.Database.Models.Base -c Children
+.\SqlToCsharpConverter\SqlToCsharpConsoleAppConverter.exe -i DFMS_create.sql -o ..\DFMS.Backend\DFMS.Database\Models\ -n DFMS.Database.Models -p Db -b DbTableCommonModel -a DFMS.Database.Models.Base -c Children -m internal -r
 if not exist ..\DFMS.Backend\DFMS.Database\Models\Base mkdir ..\DFMS.Backend\DFMS.Database\Models\Base
 move ..\DFMS.Backend\DFMS.Database\Models\DbTableCommonModel.cs ..\DFMS.Backend\DFMS.Database\Models\Base\DbTableCommonModel.cs
