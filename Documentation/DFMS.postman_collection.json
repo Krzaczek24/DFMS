@@ -99,6 +99,382 @@
 			"item": []
 		},
 		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "Assignment",
+					"item": [
+						{
+							"name": "AssignPermissionToGroup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"permissionId\": 1,\r\n    \"permissionGroupId\": 1,\r\n    \"active\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADDRESS}}/permission/assignment",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission",
+										"assignment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateGroupPermissionAssignment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"active\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADDRESS}}/permission/assignment/:{id}",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission",
+										"assignment",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UnassignPermissionFromGroup",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ADDRESS}}/permission/assignment/:{id}",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission",
+										"assignment",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AddPermission",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"lolz23\",\r\n    \"description\": \"raz dwa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADDRESS}}/permission",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePermission",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": null,\r\n  \"description\": null,\r\n  \"active\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADDRESS}}/permission/:{id}",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission",
+								":{id}"
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemovePermission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ADDRESS}}/permission/:{id}",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission",
+								":{id}"
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPermissionStructure",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ADDRESS}}/permission/structure",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission",
+								"structure"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PermissionGroup",
+			"item": [
+				{
+					"name": "Assignment",
+					"item": [
+						{
+							"name": "AssignPermissionGroupToUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"permissionId\": 1,\r\n    \"permissionGroupId\": 1,\r\n    \"active\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADDRESS}}/permission-group/assignment",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission-group",
+										"assignment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUserPermissionGroupAssignment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"active\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADDRESS}}/permission-group/assignment/:{id}",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission-group",
+										"assignment",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UnassignPermissionGroupFromUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ADDRESS}}/permission-group/assignment/:{id}",
+									"host": [
+										"{{ADDRESS}}"
+									],
+									"path": [
+										"permission-group",
+										"assignment",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AddPermissionGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"lolz23\",\r\n    \"description\": \"raz dwa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADDRESS}}/permission-group",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission-group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePermissionGroup",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": null,\r\n  \"description\": null,\r\n  \"active\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADDRESS}}/permission-group/:{id}",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission-group",
+								":{id}"
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemovePermissionGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ADDRESS}}/permission-group/:{id}",
+							"host": [
+								"{{ADDRESS}}"
+							],
+							"path": [
+								"permission-group",
+								":{id}"
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Authorize",
 			"request": {
 				"auth": {
@@ -133,7 +509,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3J6YWN6ZWsiLCJyb2xlIjoiQURNSU4iLCJJZCI6IjEiLCJMb2dpbiI6IktyemFjemVrIiwiUm9sZSI6IkFETUlOIiwiRmlyc3ROYW1lIjoiIiwiTGFzdE5hbWUiOiIiLCJMYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0wMyAwMTowMjo1NyIsIm5iZiI6MTY2NzQzMzc3NywiZXhwIjoxNjY3NDM3Mzc3LCJpYXQiOjE2Njc0MzM3Nzd9.LuM2bIFwEIKbcLPaXjgZFs6PJEyzPeYf2cM6MpzX1I0",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3J6YWN6ZWsiLCJyb2xlIjoiQURNSU4iLCJJZCI6IjEiLCJMb2dpbiI6IktyemFjemVrIiwiUm9sZSI6IkFETUlOIiwiRmlyc3ROYW1lIjoiIiwiTGFzdE5hbWUiOiIiLCJMYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0wMyAyMzo1MDo1NyIsIm5iZiI6MTY2NzUxNTg1NywiZXhwIjoxNjk5MDUxODU3LCJpYXQiOjE2Njc1MTU4NTd9.8Fw1o9Sic1Yp75bVj0gDkTKyuhH5YFmZ1BWzN0NxB-8",
 				"type": "string"
 			}
 		]
