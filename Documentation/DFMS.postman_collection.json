@@ -475,7 +475,7 @@
 			]
 		},
 		{
-			"name": "Authorize",
+			"name": "Authenticate",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -484,7 +484,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\": \"Krzaczek\",\r\n    \"passwordHash\": \"x\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Krzaczek\",\r\n    \"passwordHash\": \"x\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -492,12 +492,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{ADDRESS}}/authorization",
+					"raw": "{{ADDRESS}}/authenticate",
 					"host": [
 						"{{ADDRESS}}"
 					],
 					"path": [
-						"authorization"
+						"authenticate"
 					]
 				}
 			},
@@ -509,7 +509,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3J6YWN6ZWsiLCJyb2xlIjoiQURNSU4iLCJJZCI6IjEiLCJMb2dpbiI6IktyemFjemVrIiwiUm9sZSI6IkFETUlOIiwiRmlyc3ROYW1lIjoiIiwiTGFzdE5hbWUiOiIiLCJMYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0wMyAyMzo1MDo1NyIsIm5iZiI6MTY2NzUxNTg1NywiZXhwIjoxNjk5MDUxODU3LCJpYXQiOjE2Njc1MTU4NTd9.8Fw1o9Sic1Yp75bVj0gDkTKyuhH5YFmZ1BWzN0NxB-8",
+				"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJwZXJtaXNzaW9ucyI6IlRFU1RPV0VfUFJBV08iLCJsYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0yNyAwNDoyMjo1MiIsIm5iZiI6MTY2OTUyMjk3MiwiZXhwIjoxNjY5NTI2NTcyLCJpYXQiOjE2Njk1MjI5NzJ9.XMCdcCOdCqKjagaTdjxPwHov7_fcVwfU_0IDXPtaqGr7MsKNwe0eG-_QLWbNskTvBFv8RNStibQjkWA7rsrqcQ",
 				"type": "string"
 			}
 		]
