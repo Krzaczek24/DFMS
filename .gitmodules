@@ -4,3 +4,6 @@ url = https://github.com/Krzaczek24/DFMS.Backend.git
 [submodule "Frontend.TypeScriptReactWithMobx"]
 path = DFMS.Frontend.TypeScriptReactWithMobx
 url = https://github.com/Krzaczek24/DFMS.Frontend.TypeScriptReactWithMobx.git
+[submodule "DFMS.Frontend.Angular"]
+	path = DFMS.Frontend.Angular
+	url = https://github.com/Krzaczek24/DFMS.Frontend.Angular.git
