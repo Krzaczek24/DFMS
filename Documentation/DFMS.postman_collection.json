@@ -1,189 +1,182 @@
 {
 	"info": {
-		"_postman_id": "d8de908b-47cc-4b4e-a41b-6f56b3eb515d",
+		"_postman_id": "a9e8768f-c45c-434b-a0a9-362d4999b0c2",
 		"name": "DFMS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14132947"
 	},
 	"item": [
 		{
-			"name": "FormTemplate",
+			"name": "auth",
 			"item": [
 				{
-					"name": "Fields",
+					"name": "/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Krzaczek\",\r\n    \"passwordHash\": \"Jd+03ZNuRw4uoYGeznrK0ub0okMBgfSSQg8ZS119W+1ppDDjL5c0iGij+pfkJPrul4K8FCMwAYgS05nYYF1Yug\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3MDg1NTM3MjAsImV4cCI6MTcwOTE1ODUyMCwiaWF0IjoxNzA4NTUzNzIwfQ.P4FJRaNKPpOFi9JG1UHMnXkKCm6202DFN9K_rVz2j869QMhqZrks9nuShWP0eDoqjTWBmqyboD21-3f1IX6tjA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/refresh-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"string\",\r\n    \"passwordHash\": \"string\",\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"email\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "logout",
 					"item": [
 						{
-							"name": "Validation",
-							"item": [
-								{
-									"name": "GetValidationDefinitions",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{ADDRESS}}/form-template/validation-rules",
-											"host": [
-												"{{ADDRESS}}"
-											],
-											"path": [
-												"form-template",
-												"validation-rules"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "CreateValidationDefinition",
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"title\": \"Pole wymagane\",\r\n    \"type\": \"REQUIRED\",\r\n    \"message\": \"Pole obowiązkowe\",\r\n    \"editableMessage\": true,\r\n    \"editableValue\": false\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{ADDRESS}}/form-template/validation-rules",
-											"host": [
-												"{{ADDRESS}}"
-											],
-											"path": [
-												"form-template",
-												"validation-rules"
-											]
-										}
-									},
-									"response": []
+							"name": "/api/logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/logout",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
 								}
-							]
+							},
+							"response": []
 						},
 						{
-							"name": "Visibility",
-							"item": []
-						},
+							"name": "/api/logout-all-machines",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/logout-all-machines",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"logout-all-machines"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
 						{
-							"name": "New Request",
+							"name": "/api/user/search",
 							"request": {
 								"method": "GET",
-								"header": []
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "FormTemplate",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{ADDRESS}}/form-template",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"form-template"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "User",
-			"item": []
-		},
-		{
-			"name": "Permission",
-			"item": [
-				{
-					"name": "Assignment",
-					"item": [
-						{
-							"name": "AssignPermissionToGroup",
-							"request": {
-								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"permissionId\": 1,\r\n    \"permissionGroupId\": 1,\r\n    \"active\": null\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{ADDRESS}}/permission/assignment",
+									"raw": "{{host}}/api/user/search?page=0&pageSize=10",
 									"host": [
-										"{{ADDRESS}}"
+										"{{host}}"
 									],
 									"path": [
-										"permission",
-										"assignment"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "UpdateGroupPermissionAssignment",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"active\": true\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{ADDRESS}}/permission/assignment/:{id}",
-									"host": [
-										"{{ADDRESS}}"
+										"api",
+										"user",
+										"search"
 									],
-									"path": [
-										"permission",
-										"assignment",
-										":{id}"
-									],
-									"variable": [
+									"query": [
 										{
-											"key": "{id}",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "UnassignPermissionFromGroup",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{ADDRESS}}/permission/assignment/:{id}",
-									"host": [
-										"{{ADDRESS}}"
-									],
-									"path": [
-										"permission",
-										"assignment",
-										":{id}"
-									],
-									"variable": [
+											"key": "phraseFilter",
+											"value": "Krzaczek",
+											"disabled": true
+										},
 										{
-											"key": "{id}",
-											"value": "4"
+											"key": "onlineAfter",
+											"value": "2020-01-01",
+											"disabled": true
+										},
+										{
+											"key": "active",
+											"value": "true",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
 										}
 									]
 								}
@@ -191,329 +184,40 @@
 							"response": []
 						}
 					]
-				},
-				{
-					"name": "AddPermission",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"lolz23\",\r\n    \"description\": \"raz dwa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{ADDRESS}}/permission",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdatePermission",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": null,\r\n  \"description\": null,\r\n  \"active\": null\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{ADDRESS}}/permission/:{id}",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission",
-								":{id}"
-							],
-							"variable": [
-								{
-									"key": "{id}",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "RemovePermission",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{ADDRESS}}/permission/:{id}",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission",
-								":{id}"
-							],
-							"variable": [
-								{
-									"key": "{id}",
-									"value": "4"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetPermissionStructure",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{ADDRESS}}/permission/structure",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission",
-								"structure"
-							]
-						}
-					},
-					"response": []
 				}
-			]
-		},
-		{
-			"name": "PermissionGroup",
-			"item": [
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJjcmVhdGVkQXQiOiIyMDIzLTA3LTA5VDE3OjU3OjA2LjgxOVoiLCJsYXN0TG9naW5EYXRlIjoiMjAyNC0wMi0yMVQyMjoyODowOS4wMDBaIiwicGVybWlzc2lvbnMiOiJURVNUT1dFX1BSQVdPIiwibmJmIjoxNzA4NTU0NDkzLCJleHAiOjE3MDg1NTQ3OTMsImlhdCI6MTcwODU1NDQ5M30.BTWDpR3DC8sPubGhGuDoKjCFLiX5BdGji8zrzHtAReAREjAXfPXFXT6BuZB3mjkY3pJy5CL5xacMTvpfCXwI7Q",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
 				{
-					"name": "Assignment",
-					"item": [
-						{
-							"name": "AssignPermissionGroupToUser",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"permissionId\": 1,\r\n    \"permissionGroupId\": 1,\r\n    \"active\": null\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{ADDRESS}}/permission-group/assignment",
-									"host": [
-										"{{ADDRESS}}"
-									],
-									"path": [
-										"permission-group",
-										"assignment"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "UpdateUserPermissionGroupAssignment",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"active\": true\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{ADDRESS}}/permission-group/assignment/:{id}",
-									"host": [
-										"{{ADDRESS}}"
-									],
-									"path": [
-										"permission-group",
-										"assignment",
-										":{id}"
-									],
-									"variable": [
-										{
-											"key": "{id}",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "UnassignPermissionGroupFromUser",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{ADDRESS}}/permission-group/assignment/:{id}",
-									"host": [
-										"{{ADDRESS}}"
-									],
-									"path": [
-										"permission-group",
-										"assignment",
-										":{id}"
-									],
-									"variable": [
-										{
-											"key": "{id}",
-											"value": "4"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "AddPermissionGroup",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"lolz23\",\r\n    \"description\": \"raz dwa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{ADDRESS}}/permission-group",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission-group"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdatePermissionGroup",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": null,\r\n  \"description\": null,\r\n  \"active\": null\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{ADDRESS}}/permission-group/:{id}",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission-group",
-								":{id}"
-							],
-							"variable": [
-								{
-									"key": "{id}",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "RemovePermissionGroup",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{ADDRESS}}/permission-group/:{id}",
-							"host": [
-								"{{ADDRESS}}"
-							],
-							"path": [
-								"permission-group",
-								":{id}"
-							],
-							"variable": [
-								{
-									"key": "{id}",
-									"value": "4"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Authenticate",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Krzaczek\",\r\n    \"passwordHash\": \"x\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
 					}
 				},
-				"url": {
-					"raw": "{{ADDRESS}}/authenticate",
-					"host": [
-						"{{ADDRESS}}"
-					],
-					"path": [
-						"authenticate"
-					]
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
-			},
-			"response": []
+			]
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJwZXJtaXNzaW9ucyI6IlRFU1RPV0VfUFJBV08iLCJsYXN0TG9naW5EYXRlIjoiMjAyMi0xMS0yNyAwNDoyMjo1MiIsIm5iZiI6MTY2OTUyMjk3MiwiZXhwIjoxNjY5NTI2NTcyLCJpYXQiOjE2Njk1MjI5NzJ9.XMCdcCOdCqKjagaTdjxPwHov7_fcVwfU_0IDXPtaqGr7MsKNwe0eG-_QLWbNskTvBFv8RNStibQjkWA7rsrqcQ",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -532,6 +236,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:5000",
+			"type": "string"
 		}
 	]
 }
