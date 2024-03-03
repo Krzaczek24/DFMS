@@ -24,9 +24,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/auth/login",
+							"raw": "{{DFMS.Authorization}}/auth/login",
 							"host": [
-								"{{host}}"
+								"{{DFMS.Authorization}}"
 							],
 							"path": [
 								"auth",
@@ -51,9 +51,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/auth/refresh-token",
+							"raw": "{{DFMS.Authorization}}/auth/refresh-token",
 							"host": [
-								"{{host}}"
+								"{{DFMS.Authorization}}"
 							],
 							"path": [
 								"auth",
@@ -78,9 +78,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/auth/register",
+							"raw": "{{DFMS.Authorization}}/auth/register",
 							"host": [
-								"{{host}}"
+								"{{DFMS.Authorization}}"
 							],
 							"path": [
 								"auth",
@@ -104,9 +104,9 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/api/logout",
+									"raw": "{{DFMS.WebApi}}/api/logout",
 									"host": [
-										"{{host}}"
+										"{{DFMS.WebApi}}"
 									],
 									"path": [
 										"api",
@@ -122,9 +122,9 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/api/logout-all-machines",
+									"raw": "{{DFMS.WebApi}}/api/logout-all-machines",
 									"host": [
-										"{{host}}"
+										"{{DFMS.WebApi}}"
 									],
 									"path": [
 										"api",
@@ -145,9 +145,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/api/user/search?page=0&pageSize=10",
+									"raw": "{{DFMS.WebApi}}/api/user/search?page=0&pageSize=10",
 									"host": [
-										"{{host}}"
+										"{{DFMS.WebApi}}"
 									],
 									"path": [
 										"api",
@@ -184,6 +184,351 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "permission",
+					"item": [
+						{
+							"name": "group",
+							"item": [
+								{
+									"name": "assigment",
+									"item": [
+										{
+											"name": "/api/permission/{permission-id}/user/:{user-id}",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{DFMS.Permissions}}/api/permission/:{permission-id}/user/:{user-id}",
+													"host": [
+														"{{DFMS.Permissions}}"
+													],
+													"path": [
+														"api",
+														"permission",
+														":{permission-id}",
+														"user",
+														":{user-id}"
+													],
+													"variable": [
+														{
+															"key": "{permission-id}",
+															"value": ""
+														},
+														{
+															"key": "{user-id}",
+															"value": ""
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "/api/permission/{permission-id}/user/:{user-id}",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{DFMS.Permissions}}/api/permission/:{permission-id}/user/:{user-id}",
+													"host": [
+														"{{DFMS.Permissions}}"
+													],
+													"path": [
+														"api",
+														"permission",
+														":{permission-id}",
+														"user",
+														":{user-id}"
+													],
+													"variable": [
+														{
+															"key": "{permission-id}",
+															"value": ""
+														},
+														{
+															"key": "{user-id}",
+															"value": ""
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "/api/permission/{permission-id}/user/:{user-id}",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{DFMS.Permissions}}/api/permission/:{permission-id}/user/:{user-id}",
+													"host": [
+														"{{DFMS.Permissions}}"
+													],
+													"path": [
+														"api",
+														"permission",
+														":{permission-id}",
+														"user",
+														":{user-id}"
+													],
+													"variable": [
+														{
+															"key": "{permission-id}",
+															"value": ""
+														},
+														{
+															"key": "{user-id}",
+															"value": ""
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "/api/permission/group",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Permissions}}/api/permission/group",
+											"host": [
+												"{{DFMS.Permissions}}"
+											],
+											"path": [
+												"api",
+												"permission",
+												"group"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/permission/group/{id}",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Permissions}}/api/permission/group/:{id}",
+											"host": [
+												"{{DFMS.Permissions}}"
+											],
+											"path": [
+												"api",
+												"permission",
+												"group",
+												":{id}"
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/permission/group/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Permissions}}/api/permission/group/:{id}",
+											"host": [
+												"{{DFMS.Permissions}}"
+											],
+											"path": [
+												"api",
+												"permission",
+												"group",
+												":{id}"
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "assigment",
+							"item": [
+								{
+									"name": "/api/permission/{permission-id}/group/{group-id}",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Permissions}}/api/permission/:{permission-id}/group/:{group-id}",
+											"host": [
+												"{{DFMS.Permissions}}"
+											],
+											"path": [
+												"api",
+												"permission",
+												":{permission-id}",
+												"group",
+												":{group-id}"
+											],
+											"query": [
+												{
+													"key": "valid-until",
+													"value": null,
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "{permission-id}",
+													"value": "1"
+												},
+												{
+													"key": "{group-id}",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/permission/{permission-id}/group/{group-id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Permissions}}/api/permission/:{permission-id}/group/:{group-id}",
+											"host": [
+												"{{DFMS.Permissions}}"
+											],
+											"path": [
+												"api",
+												"permission",
+												":{permission-id}",
+												"group",
+												":{group-id}"
+											],
+											"variable": [
+												{
+													"key": "{permission-id}",
+													"value": ""
+												},
+												{
+													"key": "{group-id}",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/api/permission/structure",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.Permissions}}/api/permission/structure",
+									"host": [
+										"{{DFMS.Permissions}}"
+									],
+									"path": [
+										"api",
+										"permission",
+										"structure"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.WebApi}}/api/permission/structure",
+									"host": [
+										"{{DFMS.WebApi}}"
+									],
+									"path": [
+										"api",
+										"permission",
+										"structure"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/permission/{id}",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.WebApi}}/api/permission/:{id}",
+									"host": [
+										"{{DFMS.WebApi}}"
+									],
+									"path": [
+										"api",
+										"permission",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/permission/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.WebApi}}/api/permission/:{id}",
+									"host": [
+										"{{DFMS.WebApi}}"
+									],
+									"path": [
+										"api",
+										"permission",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "workspaces",
+					"item": []
 				}
 			],
 			"auth": {
@@ -191,7 +536,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJjcmVhdGVkQXQiOiIyMDIzLTA3LTA5VDE3OjU3OjA2LjgxOVoiLCJsYXN0TG9naW5EYXRlIjoiMjAyNC0wMi0yMVQyMjoyODowOS4wMDBaIiwicGVybWlzc2lvbnMiOiJURVNUT1dFX1BSQVdPIiwibmJmIjoxNzA4NTU0NDkzLCJleHAiOjE3MDg1NTQ3OTMsImlhdCI6MTcwODU1NDQ5M30.BTWDpR3DC8sPubGhGuDoKjCFLiX5BdGji8zrzHtAReAREjAXfPXFXT6BuZB3mjkY3pJy5CL5xacMTvpfCXwI7Q",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJjcmVhdGVkQXQiOiIyMDIzLTA3LTA5VDE3OjU3OjA2LjgxOVoiLCJsYXN0TG9naW5EYXRlIjoiMjAyNC0wMy0wM1QyMToxNzo0Ni4wMDBaIiwicGVybWlzc2lvbnMiOiJURVNUT1dFX1BSQVdPIiwibmJmIjoxNzA5NTAwNjY2LCJleHAiOjE3MDk1ODcwNjYsImlhdCI6MTcwOTUwMDY2Nn0.RJ5KrVfPhmlcsZOMwP9YFCq6zn_3y_uuFhSzUts6x-jzIysTke6eKtr2dGt-J8KIiMWO8LXAZwmNelPE1Tu8Lg",
 						"type": "string"
 					}
 				]
@@ -240,8 +585,23 @@
 	],
 	"variable": [
 		{
-			"key": "host",
+			"key": "DFMS.Authorization",
 			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "DFMS.Permissions",
+			"value": "http://localhost:5001",
+			"type": "string"
+		},
+		{
+			"key": "DFMS.Workspaces",
+			"value": "http://localhost:5002",
+			"type": "string"
+		},
+		{
+			"key": "DFMS.WebApi",
+			"value": "http://localhost:5099",
 			"type": "string"
 		}
 	]
