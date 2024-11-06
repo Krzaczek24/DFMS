@@ -528,7 +528,309 @@
 				},
 				{
 					"name": "workspaces",
-					"item": []
+					"item": [
+						{
+							"name": "group",
+							"item": [
+								{
+									"name": "assign",
+									"item": [
+										{
+											"name": "/api/workspace/group/{group-id}/user/{user-id}",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{DFMS.Workspaces}}/api/workspace/group/:{group-id}/user/:{user-id}",
+													"host": [
+														"{{DFMS.Workspaces}}"
+													],
+													"path": [
+														"api",
+														"workspace",
+														"group",
+														":{group-id}",
+														"user",
+														":{user-id}"
+													],
+													"variable": [
+														{
+															"key": "{group-id}",
+															"value": "4"
+														},
+														{
+															"key": "{user-id}",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "/api/workspace/group/{group-id}/user/{user-id}",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{DFMS.Workspaces}}/api/workspace/group/:{group-id}/user/:{user-id}",
+													"host": [
+														"{{DFMS.Workspaces}}"
+													],
+													"path": [
+														"api",
+														"workspace",
+														"group",
+														":{group-id}",
+														"user",
+														":{user-id}"
+													],
+													"variable": [
+														{
+															"key": "{group-id}",
+															"value": "4"
+														},
+														{
+															"key": "{user-id}",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "/api/workspace/group",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"FirstGroup\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DFMS.Workspaces}}/api/workspace/:{id}/group",
+											"host": [
+												"{{DFMS.Workspaces}}"
+											],
+											"path": [
+												"api",
+												"workspace",
+												":{id}",
+												"group"
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/workspace/group/{id}",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"First-Group\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DFMS.Workspaces}}/api/workspace/group/:{id}",
+											"host": [
+												"{{DFMS.Workspaces}}"
+											],
+											"path": [
+												"api",
+												"workspace",
+												"group",
+												":{id}"
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/workspace/group/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{DFMS.Workspaces}}/api/workspace/group/:{id}",
+											"host": [
+												"{{DFMS.Workspaces}}"
+											],
+											"path": [
+												"api",
+												"workspace",
+												"group",
+												":{id}"
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/api/workspace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"KrzaqInitial\",\r\n    \"public\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DFMS.Workspaces}}/api/workspace",
+									"host": [
+										"{{DFMS.Workspaces}}"
+									],
+									"path": [
+										"api",
+										"workspace"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/workspace/{id}/structure",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.Workspaces}}/api/workspace/:{id}/structure",
+									"host": [
+										"{{DFMS.Workspaces}}"
+									],
+									"path": [
+										"api",
+										"workspace",
+										":{id}",
+										"structure"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/workspace/list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.Workspaces}}/api/workspace/list",
+									"host": [
+										"{{DFMS.Workspaces}}"
+									],
+									"path": [
+										"api",
+										"workspace",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/workspace/{id}",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Krzaq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DFMS.Workspaces}}/api/workspace/:{id}",
+									"host": [
+										"{{DFMS.Workspaces}}"
+									],
+									"path": [
+										"api",
+										"workspace",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/workspace/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{DFMS.Workspaces}}/api/workspace/:{id}",
+									"host": [
+										"{{DFMS.Workspaces}}"
+									],
+									"path": [
+										"api",
+										"workspace",
+										":{id}"
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
@@ -536,7 +838,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJjcmVhdGVkQXQiOiIyMDIzLTA3LTA5VDE3OjU3OjA2LjgxOVoiLCJsYXN0TG9naW5EYXRlIjoiMjAyNC0wMy0wM1QyMToxNzo0Ni4wMDBaIiwicGVybWlzc2lvbnMiOiJURVNUT1dFX1BSQVdPIiwibmJmIjoxNzA5NTAwNjY2LCJleHAiOjE3MDk1ODcwNjYsImlhdCI6MTcwOTUwMDY2Nn0.RJ5KrVfPhmlcsZOMwP9YFCq6zn_3y_uuFhSzUts6x-jzIysTke6eKtr2dGt-J8KIiMWO8LXAZwmNelPE1Tu8Lg",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJsb2dpbiI6IktyemFjemVrIiwibmFtZSI6IktyemFjemVrIiwicm9sZSI6IkFETUlOIiwiZmlyc3ROYW1lIjoiIiwibGFzdE5hbWUiOiIiLCJjcmVhdGVkQXQiOiIyMDIzLTA3LTA5VDE3OjU3OjA2LjgxOVoiLCJsYXN0TG9naW5EYXRlIjoiMjAyNC0wMy0xN1QxMjowNzowNS4wMDBaIiwicGVybWlzc2lvbnMiOiJURVNUT1dFX1BSQVdPIiwibmJmIjoxNzEwNjc3MjI1LCJleHAiOjE3MTQzMDYwMjUsImlhdCI6MTcxMDY3NzIyNX0.boYxwSH9TSXyLgf-rIItS67pSbh-8YYEVeIXWitsr74h7kOqIcZlYKEqGjHK2V-cI_foDUCH5CCSqtJN2wm9HQ",
 						"type": "string"
 					}
 				]
